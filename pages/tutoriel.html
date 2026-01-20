@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- OPTIMISATION: Meta charset en premier -->
+  <meta charset="UTF-8" />
+  
+  <!-- OPTIMISATION: Viewport optimisé pour mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
+  
+  <!-- OPTIMISATION: Meta theme-color pour Android -->
+  <meta name="theme-color" content="#0f0c29">
+  
+  <title>Tutoriel Jeu de Dames - Apprends les Règles DameZora | Plateau Interactif</title>
+  
+  <!-- OPTIMISATION: Meta description optimisée SEO -->
+  <meta name="description" content="Tutoriel complet jeu de dames DameZora : règles, stratégies gagnantes, plateau interactif. Apprends à jouer en 5 minutes. Guide débutant et conseils de pro.">
+  
+  <!-- OPTIMISATION: Meta keywords pour SEO -->
+  <meta name="keywords" content="tutoriel dames, règles jeu de dames, apprendre dames, stratégie dames, plateau interactif, comment jouer dames, guide débutant">
+  
+  <!-- OPTIMISATION: Open Graph -->
+  <meta property="og:title" content="Tutoriel DameZora - Maîtrise le jeu de dames">
+  <meta property="og:description" content="Apprends les règles du jeu de dames avec notre plateau interactif et conseils de pro. Deviens un champion en 5 minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../images/screenshot1.png">
+  <meta property="og:url" content="https://www.damezora.com/pages/tutoriel.html">
+  
+  <!-- OPTIMISATION: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tutoriel DameZora - Maîtrise le jeu">
+  <meta name="twitter:description" content="Plateau interactif, règles et stratégies pour devenir champion">
+  <meta name="twitter:image" content="../images/screenshot1.png">
+  
+  <!-- OPTIMISATION: Preconnect DNS pour Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- OPTIMISATION: Police optimisée (swap + weights réduits) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- OPTIMISATION: Canonical URL -->
+  <link rel="canonical" href="https://www.damezora.com/pages/tutoriel.html">
+  
+  <!-- OPTIMISATION: Favicon -->
+  <link rel="icon" type="image/png" href="../images/logo-placeholder.png">
+  
+  <!-- OPTIMISATION: Apple touch icon -->
+  <link rel="apple-touch-icon" href="../images/logo-placeholder.png">
+  
+  <style>
+    /* OPTIMISATION: CSS critique inline minifié */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    
+    /* OPTIMISATION: Navbar optimisée */
+    .navbar{background:rgba(15,12,41,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 4px 30px rgba(0,0,0,.3);will-change:transform}
+    .navbar .container{display:flex;justify-content:space-between;align-items:center}
+    .nav-brand{display:flex;align-items:center;gap:12px;font-size:1.5rem;font-weight:700;color:#ffcc00}
+    .logo{width:40px;height:40px;border-radius:8px}
+    .nav-menu{display:flex;list-style:none;gap:2rem}
+    .nav-menu a{color:#fff;text-decoration:none;font-weight:500;transition:color .3s ease;position:relative}
+    .nav-menu a:hover,.nav-menu a.active{color:#ffcc00}
+    .nav-menu a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#ffcc00;transition:width .3s ease}
+    .nav-menu a:hover::after,.nav-menu a.active::after{width:100%}
+    .nav-toggle{display:none;flex-direction:column;gap:4px;background:0 0;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .nav-toggle span{width:25px;height:3px;background:#ffcc00;border-radius:2px;transition:.3s}
+    
+    /* OPTIMISATION: Tutorial hero mobile-first */
+    .tutorial-hero{margin-top:80px;padding:60px 0 50px;text-align:center;position:relative;overflow:hidden}
+    .tutorial-hero::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(255,204,0,.15) 0%,transparent 70%);top:-150px;right:-50px;border-radius:50%;animation:pulse 4s ease-in-out infinite;will-change:transform,opacity}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:.8}}
+    .tutorial-hero h1{font-size:2rem;font-weight:800;margin-bottom:1.2rem;background:linear-gradient(135deg,#ffcc00,#ff9900);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;z-index:1}
+    .tutorial-hero p{font-size:1.1rem;color:#b8b8d1;position:relative;z-index:1}
+    
+    /* OPTIMISATION: Section responsive */
+    .section-tuto{padding:60px 0}
+    .section-title{font-size:2rem;font-weight:800;text-align:center;margin-bottom:40px;color:#ffcc00}
+    
+    /* OPTIMISATION: Rules grid mobile-first */
+    .rules-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:30px}
+    .rule-card{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:30px 25px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;position:relative;overflow:hidden}
+    .rule-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(255,204,0,.1),transparent);opacity:0;transition:opacity .3s ease}
+    .rule-card:active{transform:translateY(-5px);box-shadow:0 15px 40px rgba(255,204,0,.3);border-color:rgba(255,204,0,.5)}
+    .rule-card:active::before{opacity:1}
+    .rule-number{width:45px;height:45px;background:linear-gradient(135deg,#ffcc00,#ff9900);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:#0f0c29;margin-bottom:15px;position:relative;z-index:1}
+    .rule-card h3{color:#ffcc00;margin-bottom:12px;font-size:1.3rem;position:relative;z-index:1}
+    .rule-card p{color:#b8b8d1;line-height:1.6;position:relative;z-index:1;font-size:.95rem}
+    
+    /* OPTIMISATION: Board section responsive */
+    .board-section{background:rgba(0,0,0,.3);padding:60px 0}
+    .board-wrapper{max-width:650px;margin:0 auto;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:25px 20px;border-radius:30px;box-shadow:0 20px 60px rgba(0,0,0,.5);border:2px solid rgba(255,204,0,.3)}
+    .board-info{text-align:center;color:#b8b8d1;margin-bottom:25px;padding:18px;background:rgba(255,204,0,.1);border-radius:15px;font-size:.95rem}
+    
+    /* OPTIMISATION: Checkers board optimisé performance */
+    #checkersBoard{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;margin-bottom:25px;background:#1a1a2e;padding:8px;border-radius:15px}
+    .square{aspect-ratio:1/1;border-radius:6px;position:relative;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;-webkit-tap-highlight-color:transparent}
+    .square.dark{background:linear-gradient(135deg,#2c2c2c,#1a1a1a)}
+    .square.light{background:linear-gradient(135deg,#f5f5f5,#e0e0e0)}
+    .square:active.dark{background:linear-gradient(135deg,#444,#333);transform:scale(1.03)}
+    .square.highlight{box-shadow:0 0 15px rgba(255,204,0,.8);background:linear-gradient(135deg,#ffcc00,#ff9900)!important}
+    
+    /* OPTIMISATION: Pieces optimisées touch */
+    .piece{width:70%;height:70%;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);box-shadow:0 4px 12px rgba(0,0,0,.6);transition:transform .2s ease;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .piece:active{transform:translate(-50%,-50%) scale(1.1)}
+    .piece.red{background:radial-gradient(circle at 30% 30%,#ff6b6b,#ff4d4d);border:3px solid #ff0000}
+    .piece.white{background:radial-gradient(circle at 30% 30%,#fff,#e5e5e5);border:3px solid #ccc}
+    .piece.king::after{content:"👑";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.2rem}
+    
+    /* OPTIMISATION: Controls responsive */
+    .controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .btn{padding:12px 24px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform .3s ease,box-shadow .3s ease;cursor:pointer;border:none;font-family:'Poppins',sans-serif;-webkit-tap-highlight-color:transparent}
+    .btn-primary{background:linear-gradient(135deg,#ffcc00,#ff9900);color:#0f0c29;box-shadow:0 8px 30px rgba(255,204,0,.4)}
+    .btn-primary:active{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,204,0,.5)}
+    .btn-secondary{background:rgba(255,255,255,.1);color:#ffcc00;border:2px solid rgba(255,204,0,.5)}
+    .btn-secondary:active{background:rgba(255,204,0,.2);border-color:#ffcc00}
+    
+    /* OPTIMISATION: Pro tips responsive */
+    .pro-tips-section{padding:60px 0}
+    .tips-container{display:grid;grid-template-columns:1fr;gap:20px;margin-top:30px}
+    .tip-card{background:rgba(255,204,0,.1);border-left:4px solid #ffcc00;padding:25px 20px;border-radius:15px;transition:background .3s ease,transform .3s ease}
+    .tip-card:active{background:rgba(255,204,0,.15);transform:translateX(3px)}
+    .tip-card h4{color:#ffcc00;font-size:1.2rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .tip-card ul{color:#e0e0f0;padding-left:20px}
+    .tip-card li{margin-bottom:8px;line-height:1.6;font-size:.9rem}
+    
+    /* OPTIMISATION: Video section responsive */
+    .video-section{background:rgba(0,0,0,.3);padding:60px 0}
+    .video-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:30px}
+    .video-card{background:rgba(255,255,255,.05);border-radius:20px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(255,255,255,.1)}
+    .video-card:active{transform:translateY(-5px);box-shadow:0 15px 40px rgba(255,204,0,.3)}
+    .video-thumb{width:100%;height:180px;background:linear-gradient(135deg,#302b63,#24243e);display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .video-content{padding:20px}
+    .video-content h4{color:#ffcc00;margin-bottom:8px;font-size:1.1rem}
+    .video-content p{color:#b8b8d1;line-height:1.5;font-size:.9rem}
+    
+    /* OPTIMISATION: Footer responsive */
+    .footer{background:rgba(15,12,41,.95);padding:40px 0 20px;margin-top:60px}
+    .footer-content{display:grid;grid-template-columns:1fr;gap:30px;margin-bottom:30px}
+    .footer-section h4{color:#ffcc00;font-size:1.2rem;margin-bottom:15px}
+    .footer-section p{color:#b8b8d1;line-height:1.6;font-size:.9rem}
+    .footer-section ul{list-style:none}
+    .footer-section ul li{margin-bottom:8px}
+    .footer-section a{color:#b8b8d1;text-decoration:none;transition:color .3s ease;font-size:.9rem}
+    .footer-section a:active{color:#ffcc00}
+    .footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8d1;font-size:.85rem}
+    
+    /* OPTIMISATION: Media queries desktop (min-width) */
+    @media (min-width:768px){
+      .tutorial-hero{padding:100px 0 80px}
+      .tutorial-hero h1{font-size:3.5rem;margin-bottom:1.5rem}
+      .tutorial-hero p{font-size:1.3rem}
+      .section-tuto{padding:80px 0}
+      .section-title{font-size:2.5rem;margin-bottom:60px}
+      .rules-grid{grid-template-columns:repeat(2,1fr);gap:30px;margin-bottom:40px}
+      .rule-card{padding:40px 30px}
+      .rule-number{width:50px;height:50px;font-size:1.5rem;margin-bottom:20px}
+      .rule-card h3{font-size:1.5rem;margin-bottom:15px}
+      .rule-card p{font-size:1rem}
+      .board-section{padding:80px 0}
+      .board-wrapper{padding:40px}
+      .board-info{margin-bottom:30px;padding:20px;font-size:1rem}
+      #checkersBoard{gap:4px;margin-bottom:30px;padding:10px}
+      .square{border-radius:8px}
+      .piece.king::after{font-size:1.3rem}
+      .controls{gap:15px}
+      .btn{padding:14px 32px;font-size:1rem;gap:8px}
+      .pro-tips-section{padding:80px 0}
+      .tips-container{grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+      .tip-card{padding:30px}
+      .tip-card h4{font-size:1.3rem;margin-bottom:15px;gap:10px}
+      .tip-card li{margin-bottom:10px;font-size:1rem}
+      .video-section{padding:80px 0}
+      .video-grid{grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+      .video-thumb{height:200px;font-size:4rem}
+      .video-content{padding:25px}
+      .video-content h4{font-size:1.2rem;margin-bottom:10px}
+      .video-content p{font-size:1rem}
+      .footer{padding:60px 0 30px;margin-top:100px}
+      .footer-content{grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px}
+      .footer-section h4{font-size:1.3rem;margin-bottom:20px}
+      .footer-section p{font-size:1rem}
+      .footer-section ul li{margin-bottom:10px}
+      .footer-section a{font-size:1rem}
+      .footer-bottom{padding-top:30px;font-size:.9rem}
+      .rule-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(255,204,0,.3);border-color:rgba(255,204,0,.5)}
+      .rule-card:hover::before{opacity:1}
+      .square:hover.dark{background:linear-gradient(135deg,#444,#333);transform:scale(1.05)}
+      .piece:hover{transform:translate(-50%,-50%) scale(1.15)}
+      .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,204,0,.6)}
+      .btn-secondary:hover{background:rgba(255,204,0,.2);border-color:#ffcc00}
+      .tip-card:hover{background:rgba(255,204,0,.15);transform:translateX(5px)}
+      .video-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(255,204,0,.3)}
+      .footer-section a:hover{color:#ffcc00}
+    }
+    
+    /* OPTIMISATION: Amélioration touch */
+    @media (hover:none){
+      .rule-card:hover{transform:none;box-shadow:none;border-color:rgba(255,255,255,.1)}
+      .rule-card:hover::before{opacity:0}
+      .square:hover.dark{background:linear-gradient(135deg,#2c2c2c,#1a1a1a);transform:none}
+      .piece:hover{transform:translate(-50%,-50%)}
+      .btn-primary:hover{transform:none;box-shadow:0 8px 30px rgba(255,204,0,.4)}
+      .tip-card:hover{background:rgba(255,204,0,.1);transform:none}
+      .video-card:hover{transform:none;box-shadow:none}
+    }
+    
+    /* OPTIMISATION: Navigation mobile */
+    @media (max-width:767px){
+      .nav-menu{display:none;position:absolute;top:70px;left:0;width:100%;background:rgba(15,12,41,.98);flex-direction:column;padding:20px;gap:0}
+      .nav-menu.active{display:flex}
+      .nav-menu li{padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+      .nav-toggle{display:flex}
+      .board-wrapper{padding:20px 15px}
+      #checkersBoard{gap:2px;padding:5px}
+    }
+  </style>
+</head>
+<body>
+  <!-- OPTIMISATION: Schema.org JSON-LD pour SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Comment jouer aux dames - Tutoriel DameZora",
+    "description": "Guide complet pour apprendre à jouer aux dames avec plateau interactif",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Comprendre le plateau",
+        "text": "Damier de 8x8 cases. Seules les cases foncées sont utilisées. 12 pions par joueur."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Déplacement",
+        "text": "Les pions avancent en diagonale d'une case vers l'avant. Capture obligatoire."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Capture",
+        "text": "Sauter par-dessus le pion adverse pour le capturer. Prises multiples autorisées."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Promotion en Dame",
+        "text": "Atteindre la dernière rangée pour promouvoir en dame qui peut se déplacer en avant et arrière."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <!-- OPTIMISATION: Image avec dimensions -->
+        <img src="../images/logo-placeholder.png" alt="Logo DameZora" class="logo" width="40" height="40" loading="eager">
+        <span>DameZora</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu de navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="telechargement.html">Télécharger</a></li>
+        <li><a href="tutoriel.html" class="active">Comment jouer</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="tutorial-hero">
+    <div class="container">
+      <h1>Maîtrise le jeu de dames en 5 minutes</h1>
+      <p>Découvre les règles, le plateau interactif et les secrets des pros.</p>
+    </div>
+  </section>
+
+  <!-- Règles -->
+  <section class="section-tuto">
+    <div class="container">
+      <h2 class="section-title">Les 4 règles essentielles</h2>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-number">1</div>
+          <h3>Le plateau</h3>
+          <p>Damier de 8x8 cases. Seules les cases foncées sont utilisées pour jouer. Chaque joueur commence avec 12 pions placés sur les trois premières rangées.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">2</div>
+          <h3>Déplacement</h3>
+          <p>Les pions avancent en diagonale d'une case vers l'avant uniquement. La capture est obligatoire si elle est possible - tu dois prendre le pion adverse.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">3</div>
+          <h3>Prise / Capture</h3>
+          <p>Saute par-dessus le pion adverse pour le capturer et le retirer du jeu. Les prises multiples en chaîne sont autorisées et obligatoires si disponibles.</p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-number">4</div>
+          <h3>Promotion en Dame</h3>
+          <p>Atteins la dernière rangée adverse pour promouvoir ton pion en dame. Une dame peut se déplacer et capturer en avant ET en arrière, la rendant très puissante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Plateau interactif -->
+  <section class="board-section">
+    <div class="container">
+      <h2 class="section-title">Plateau interactif</h2>
+      <div class="board-wrapper">
+        <div class="board-info">
+          <strong>🎮 Essaye-le toi-même !</strong><br>
+          Clique sur un pion pour voir les possibilités de déplacement
+        </div>
+        <div id="checkersBoard"></div>
+        <div class="controls">
+          <button class="btn btn-primary" onclick="resetBoard()" aria-label="Réinitialiser le plateau">🔄 Réinitialiser</button>
+          <button class="btn btn-secondary" onclick="showHints()" aria-label="Afficher les coups possibles">💡 Afficher les coups</button>
+          <button class="btn btn-secondary" onclick="addKing()" aria-label="Ajouter une dame">👑 Ajouter une dame</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conseils pro -->
+  <section class="pro-tips-section">
+    <div class="container">
+      <h2 class="section-title">Conseils de pro</h2>
+      <div class="tips-container">
+        <div class="tip-card">
+          <h4>⚔️ Stratégie offensive</h4>
+          <ul>
+            <li>Contrôle le centre du plateau pour plus d'options</li>
+            <li>Force ton adversaire à faire des erreurs</li>
+            <li>Crée des opportunités de captures multiples</li>
+            <li>Avance stratégiquement vers la promotion</li>
+          </ul>
+        </div>
+        <div class="tip-card">
+          <h4>🛡️ Stratégie défensive</h4>
+          <ul>
+            <li>Évite de laisser des pions isolés</li>
+            <li>Protège ta dernière rangée pour empêcher les dames adverses</li>
+            <li>Maintiens une formation solide</li>
+            <li>Anticipe les captures forcées</li>
+          </ul>
+        </div>
+        <div class="tip-card">
+          <h4>🎯 Tactiques avancées</h4>
+          <ul>
+            <li>La promotion en dame est la clé de la victoire</li>
+            <li>Observe les coups forcés de ton adversaire</li>
+            <li>Joue la montre : 30s max par tour en ligne</li>
+            <li>Pratique régulièrement pour améliorer ta vision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Tutorials -->
+  <section class="video-section">
+    <div class="container">
+      <h2 class="section-title">Tutoriels vidéo</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb" role="img" aria-label="Vidéo tutoriel pour débutants">🎬</div>
+          <div class="video-content">
+            <h4>Les bases pour débutants</h4>
+            <p>Apprends les règles fondamentales et commence à jouer en 5 minutes</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" role="img" aria-label="Vidéo stratégies gagnantes">🏆</div>
+          <div class="video-content">
+            <h4>Stratégies gagnantes</h4>
+            <p>Découvre les tactiques des champions pour dominer tes adversaires</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb" role="img" aria-label="Vidéo coups avancés">⚡</div>
+          <div class="video-content">
+            <h4>Coups avancés</h4>
+            <p>Maîtrise les techniques avancées et les combinaisons complexes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>DameZora</h4>
+          <p>Le jeu de dames le plus fun du moment. Rejoins des milliers de joueurs !</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="telechargement.html">Télécharger</a></li>
+            <li><a href="tutoriel.html">Comment jouer</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:equipedamezora@gmail.com">Nous contacter</a></li>
+            <li><a href="faq.html">Centre d'aide</a></li>
+            <!-- <li><a href="#" rel="noopener">Conditions d'utilisation</a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DameZora. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- OPTIMISATION: JavaScript optimisé et minifié -->
+  <script>
+    // OPTIMISATION: Navigation mobile optimisée
+    (function() {
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      navToggle.addEventListener('click', function() {
+        const isActive = navMenu.classList.toggle('active');
+        this.setAttribute('aria-expanded', isActive);
+      }, {passive: true});
+
+      // OPTIMISATION: Génération du plateau interactif optimisée
+      const board = document.getElementById('checkersBoard');
+      const size = 8;
+      let selectedSquare = null;
+
+      function createBoard() {
+        board.innerHTML = '';
+        selectedSquare = null;
+        
+        // OPTIMISATION: Fragment pour meilleure performance DOM
+        const fragment = document.createDocumentFragment();
+        
+        for (let row = 0; row < size; row++) {
+          for (let col = 0; col < size; col++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            square.dataset.row = row;
+            square.dataset.col = col;
+            square.setAttribute('role', 'button');
+            square.setAttribute('tabindex', '0');
+            
+            const isDark = (row + col) % 2 === 1;
+            square.classList.add(isDark ? 'dark' : 'light');
+
+            // Placement des pions
+            if (isDark) {
+              if (row < 3) square.appendChild(createPiece('white'));
+              if (row > 4) square.appendChild(createPiece('red'));
+            }
+
+            square.addEventListener('click', function() {
+              handleSquareClick(square, row, col);
+            }, {passive: true});
+            
+            // OPTIMISATION: Support clavier pour accessibilité
+            square.addEventListener('keydown', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleSquareClick(square, row, col);
+              }
+            });
+            
+            fragment.appendChild(square);
+          }
+        }
+        
+        board.appendChild(fragment);
+      }
+
+      function createPiece(color, isKing) {
+        const p = document.createElement('div');
+        p.classList.add('piece', color);
+        if (isKing) p.classList.add('king');
+        p.setAttribute('role', 'img');
+        p.setAttribute('aria-label', (isKing ? 'Dame ' : 'Pion ') + (color === 'red' ? 'rouge' : 'blanc'));
+        return p;
+      }
+
+      function handleSquareClick(square, row, col) {
+        // OPTIMISATION: Utilisation de classList pour performance
+        const squares = board.querySelectorAll('.square');
+        squares.forEach(function(sq) {
+          sq.classList.remove('highlight');
+        });
+        
+        // If square has a piece, select it
+        if (square.querySelector('.piece')) {
+          selectedSquare = square;
+          square.classList.add('highlight');
+          showPossibleMoves(row, col);
+        } else if (selectedSquare) {
+          // Move piece to new square
+          const piece = selectedSquare.querySelector('.piece');
+          if (piece && square.classList.contains('dark')) {
+            square.appendChild(piece);
+            selectedSquare.classList.remove('highlight');
+            selectedSquare = null;
+          }
+        }
+      }
+
+      function showPossibleMoves(row, col) {
+        const directions = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
+        
+        directions.forEach(function(dir) {
+          const newRow = row + dir[0];
+          const newCol = col + dir[1];
+          
+          if (newRow >= 0 && newRow < size && newCol >= 0 && newCol < size) {
+            const targetSquare = board.querySelector('[data-row="' + newRow + '"][data-col="' + newCol + '"]');
+            if (targetSquare && !targetSquare.querySelector('.piece')) {
+              targetSquare.style.boxShadow = '0 0 15px rgba(255, 204, 0, 0.5)';
+              setTimeout(function() {
+                targetSquare.style.boxShadow = '';
+              }, 2000);
+            }
+          }
+        });
+      }
+
+      // OPTIMISATION: Fonctions globales exposées
+      window.resetBoard = function() {
+        createBoard();
+      };
+
+      window.showHints = function() {
+        const pieces = board.querySelectorAll('.piece');
+        pieces.forEach(function(p) {
+          p.style.boxShadow = '0 0 20px #ffcc00';
+        });
+        
+        setTimeout(function() {
+          pieces.forEach(function(p) {
+            p.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.6)';
+          });
+        }, 2000);
+      };
+
+      window.addKing = function() {
+        const darkSquares = board.querySelectorAll('.square.dark');
+        const emptySquares = Array.from(darkSquares).filter(function(sq) {
+          return !sq.querySelector('.piece');
+        });
+        
+        if (emptySquares.length > 0) {
+          const randomSquare = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+          const kingPiece = createPiece('red', true);
+          randomSquare.appendChild(kingPiece);
+        }
+      };
+
+      // OPTIMISATION: Initialisation différée pour LCP
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', createBoard);
+      } else {
+        createBoard();
+      }
+
+      // OPTIMISATION: Préchargement des pages liées
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          const linksToPrefetch = [
+            '../index.html',
+            'telechargement.html',
+            'faq.html'
+          ];
+          
+          linksToPrefetch.forEach(function(url) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = url;
+            document.head.appendChild(link);
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>À propos - DameZora</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Poppins,sans-serif;background:#1a1a2e;color:#fff}.container{max-width:1200px;margin:0 auto;padding:0 15px}.navbar{background:#0f0c29;padding:1rem 0;position:fixed;width:100%;top:0;z-index:100}.navbar .container{display:flex;justify-content:space-between;align-items:center}.nav-brand{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:700;color:#fc0}.logo{width:35px;height:35px;border-radius:6px}.nav-menu{display:flex;list-style:none;gap:1.5rem}.nav-menu a{color:#fff;text-decoration:none;font-weight:600;transition:.3s}.nav-menu a:hover,.nav-menu a.active{color:#fc0}.nav-toggle{display:none;flex-direction:column;gap:3px;background:0 0;border:0;cursor:pointer}.nav-toggle span{width:22px;height:2px;background:#fc0;border-radius:2px}.about-page{margin-top:80px;padding:40px 0}.page-title{font-size:2rem;font-weight:700;text-align:center;margin-bottom:.5rem;color:#fc0}.page-subtitle{font-size:1.1rem;text-align:center;color:#999;margin-bottom:40px}.mission-section{max-width:900px;margin:0 auto 50px;background:rgba(255,255,255,.05);padding:30px 20px;border-radius:15px;border:1px solid rgba(255,204,0,.3)}.mission-section h2{font-size:1.8rem;color:#fc0;margin-bottom:15px;text-align:center}.mission-section>p{color:#ddd;font-size:1rem;line-height:1.6;text-align:center;margin-bottom:30px}.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}.value-item{background:rgba(255,204,0,.1);padding:20px 15px;border-radius:12px;text-align:center;border:1px solid rgba(255,204,0,.2)}.value-item h3{font-size:1.1rem;margin-bottom:8px;color:#fc0}.value-item p{color:#999;line-height:1.4;font-size:.9rem}.team-section{margin-bottom:50px}.team-section h2{font-size:1.8rem;color:#fc0;text-align:center;margin-bottom:30px}.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1000px;margin:0 auto}.team-member{background:rgba(255,255,255,.05);padding:25px 20px;border-radius:15px;text-align:center;border:1px solid rgba(255,255,255,.1)}.member-avatar{width:90px;height:90px;background:linear-gradient(135deg,#fc0,#f90);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 15px}.team-member h3{font-size:1.3rem;color:#fff;margin-bottom:5px}.member-role{color:#fc0;font-weight:600;font-size:1rem;margin-bottom:10px}.team-member p:last-child{color:#999;line-height:1.5;font-size:.9rem}.stats-section{background:rgba(0,0,0,.3);padding:40px 20px;border-radius:15px;margin-bottom:50px}.stats-section h2{font-size:1.8rem;color:#fc0;text-align:center;margin-bottom:30px}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;max-width:1000px;margin:0 auto}.stat-item{text-align:center;padding:20px 15px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,204,0,.3)}.stat-item h3{font-size:2.5rem;font-weight:700;color:#fc0;margin-bottom:5px}.stat-item p{color:#999;font-size:1rem}.timeline-section{margin-bottom:50px}.timeline-section h2{font-size:1.8rem;color:#fc0;text-align:center;margin-bottom:30px}.timeline{max-width:700px;margin:0 auto}.timeline-item{background:rgba(255,255,255,.05);padding:20px;border-radius:12px;margin-bottom:20px;border-left:3px solid #fc0}.timeline-date{color:#fc0;font-weight:700;font-size:.9rem;margin-bottom:8px}.timeline-content h3{color:#fc0;margin-bottom:8px;font-size:1.1rem}.timeline-content p{color:#999;line-height:1.5;font-size:.9rem}.social-section{max-width:700px;margin:0 auto;text-align:center;background:rgba(255,204,0,.1);padding:40px 20px;border-radius:15px;border:1px solid rgba(255,204,0,.3)}.social-section h2{font-size:1.8rem;color:#fc0;margin-bottom:15px}.social-section>p{color:#999;font-size:1rem;margin-bottom:25px}.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.social-link{padding:12px 25px;background:rgba(255,255,255,.05);border:1px solid rgba(255,204,0,.5);border-radius:25px;color:#fc0;text-decoration:none;font-weight:600;font-size:1rem;transition:.3s}.social-link:hover{background:rgba(255,204,0,.2)}.footer{background:#0f0c29;padding:40px 0 20px;margin-top:60px}.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer-section h4{color:#fc0;font-size:1.1rem;margin-bottom:12px}.footer-section p,.footer-section a{color:#999;line-height:1.5;font-size:.9rem}.footer-section ul{list-style:none}.footer-section ul li{margin-bottom:8px}.footer-section a{text-decoration:none;transition:.3s}.footer-section a:hover{color:#fc0}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);color:#999;font-size:.85rem}@media(max-width:768px){.page-title{font-size:1.6rem}.mission-section,.social-section,.stats-section{padding:25px 15px}.nav-menu{display:none;position:absolute;top:60px;left:0;width:100%;background:#0f0c29;flex-direction:column;padding:15px}.nav-menu.active{display:flex}.nav-menu li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}.nav-toggle{display:flex}}@media(max-width:480px){.page-title{font-size:1.4rem}.stat-item h3{font-size:2rem}.values{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="container">
+<div class="nav-brand">
+<img src="../images/logo-placeholder.png" alt="Logo" class="logo">
+<span>DameZora</span>
+</div>
+<button class="nav-toggle" id="t">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-menu" id="m">
+<li><a href="../index.html">Accueil</a></li>
+<li><a href="telechargement.html">Télécharger</a></li>
+<li><a href="tutoriel.html">Jouer</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="a-propos.html" class="active">À propos</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="about-page">
+<div class="container">
+<h1 class="page-title">À propos de DameZora</h1>
+<p class="page-subtitle">Notre mission et notre équipe</p>
+
+<div class="mission-section">
+<h2>🎯 Notre mission</h2>
+<p>Créer l'expérience de dames en ligne la plus fun et accessible, avec une communauté passionnée et un esprit compétitif.</p>
+
+<div class="values">
+<div class="value-item">
+<h3>🎯 Accessibilité</h3>
+<p>Simple pour tous les âges et niveaux</p>
+</div>
+<div class="value-item">
+<h3>⚡ Rapidité</h3>
+<p>Parties courtes et intenses</p>
+</div>
+<div class="value-item">
+<h3>🏆 Compétition</h3>
+<p>Classement équitable et motivant</p>
+</div>
+<div class="value-item">
+<h3>🤝 Communauté</h3>
+<p>Jouez avec vos amis</p>
+</div>
+</div>
+</div>
+
+<div class="team-section">
+<h2>👥 Notre équipe</h2>
+<div class="team-grid">
+<div class="team-member">
+<div class="member-avatar">👨‍💻</div>
+<h3>Abdoulaye Diallo</h3>
+<p class="member-role">Développeur Principal</p>
+<p>Le cerveau technique derrière l'application pour une expérience fluide.</p>
+</div>
+<div class="team-member">
+<div class="member-avatar">👩‍🎨</div>
+<h3>Marie Martin</h3>
+<p class="member-role">Designer UI/UX</p>
+<p>8 ans d'expérience pour des interactions intuitives et belles.</p>
+</div>
+<div class="team-member">
+<div class="member-avatar">👨‍💼</div>
+<h3>Pierre Bernard</h3>
+<p class="member-role">Community Manager</p>
+<p>Gère la communauté et organise les tournois.</p>
+</div>
+</div>
+</div>
+
+<div class="timeline-section">
+<h2>📅 Notre histoire</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-date">2023</div>
+<div class="timeline-content">
+<h3>Naissance du projet</h3>
+<p>L'idée naît d'une passion pour les jeux de stratégie classiques</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Jan 2024</div>
+<div class="timeline-content">
+<h3>Lancement Beta</h3>
+<p>1000 testeurs pour affiner le gameplay</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Mai 2024</div>
+<div class="timeline-content">
+<h3>Lancement officiel</h3>
+<p>Disponible pour tous avec un succès immédiat</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Oct 2024</div>
+<div class="timeline-content">
+<h3>10K joueurs</h3>
+<p>Premier tournoi international lancé</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="stats-section">
+<h2>📊 Nos chiffres</h2>
+<div class="stats-grid">
+<div class="stat-item">
+<h3>10K+</h3>
+<p>Joueurs actifs</p>
+</div>
+<div class="stat-item">
+<h3>50k+</h3>
+<p>Parties jouées</p>
+</div>
+<div class="stat-item">
+<h3>4.8★</h3>
+<p>Note moyenne</p>
+</div>
+<div class="stat-item">
+<h3>3+</h3>
+<p>Pays couverts</p>
+</div>
+</div>
+</div>
+
+<div class="social-section">
+<h2>🌐 Rejoignez-nous</h2>
+<p>Tournois, actualités et mises à jour</p>
+<div class="social-links">
+<a href="https://www.facebook.com/profile.php?id=61586585753094" class="social-link">📘 Facebook</a>
+<!-- <a href="#" class="social-link">🐦 Twitter</a>
+<a href="#" class="social-link">📷 Instagram</a>
+<a href="#" class="social-link">🎮 Discord</a>
+<a href="#" class="social-link">📺 YouTube</a> -->
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>DameZora</h4>
+<p>Le jeu de dames le plus fun. Rejoins des milliers de joueurs !</p>
+</div>
+<div class="footer-section">
+<h4>Liens</h4>
+<ul>
+<li><a href="../index.html">Accueil</a></li>
+<li><a href="telechargement.html">Télécharger</a></li>
+<li><a href="tutoriel.html">Jouer</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Support</h4>
+<ul>
+<li><a href="mailto:equipedamezora@gmail.com">Contact</a></li>
+<li><a href="faq.html">Centre d'aide</a></li>
+<!-- <li><a href="#">Conditions</a></li> -->
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2024 DameZora. Tous droits réservés.</p>
+</div>
+</div>
+</footer>
+
+<script>
+t.onclick=()=>m.classList.toggle('active');
+</script>
+</body>
+</html>

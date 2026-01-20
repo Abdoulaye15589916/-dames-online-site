@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f0c29">
+    <title>Télécharger DameZora APK Android Gratuit</title>
+    <meta name="description" content="Télécharge gratuitement DameZora APK pour Android. Installation en 2 min. Compatible Android 5.0+. 100% sécurisé.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Poppins,sans-serif;background:#0f0c29;color:#fff;overflow-x:hidden;touch-action:pan-y;-webkit-font-smoothing:antialiased}
+        .container{max-width:1200px;margin:0 auto;padding:0 15px}
+        
+        .navbar{background:rgba(15,12,41,.95);padding:.8rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+        .navbar .container{display:flex;justify-content:space-between;align-items:center}
+        .nav-brand{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:700;color:#ffcc00}
+        .logo{width:35px;height:35px;border-radius:8px}
+        
+        .nav-toggle{display:flex;flex-direction:column;gap:4px;background:0 0;border:none;cursor:pointer;padding:8px;min-width:40px;min-height:40px}
+        .nav-toggle span{width:22px;height:2px;background:#ffcc00;border-radius:2px}
+        
+        .nav-menu{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(15,12,41,.98);flex-direction:column;padding:15px;list-style:none}
+        .nav-menu.active{display:flex}
+        .nav-menu li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+        .nav-menu a{color:#fff;text-decoration:none;font-weight:500;display:block}
+        .nav-menu a.active{color:#ffcc00}
+        
+        .download-page{margin-top:80px;padding:40px 0}
+        .page-title{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:.8rem;background:linear-gradient(135deg,#ffcc00,#ff9900);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .page-subtitle{font-size:1rem;text-align:center;color:#b8b8d1;margin-bottom:30px}
+        
+        .download-card{background:rgba(255,255,255,.05);border-radius:20px;padding:30px 20px;text-align:center;border:2px solid rgba(255,204,0,.3);margin-bottom:30px}
+        .platform-icon{font-size:3rem;margin-bottom:15px}
+        .download-card h2{font-size:1.5rem;color:#ffcc00;margin-bottom:10px}
+        .download-card p{color:#b8b8d1;font-size:.95rem;margin-bottom:20px;line-height:1.5}
+        
+        .btn{padding:12px 28px;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:none}
+        .btn-primary{background:linear-gradient(135deg,#ffcc00,#ff9900);color:#0f0c29;margin-bottom:20px}
+        .btn-outline{background:transparent;color:#ffcc00;border:2px solid #ffcc00}
+        
+        .qr-code{margin-top:20px;padding:20px;background:rgba(255,255,255,.95);border-radius:15px;display:inline-block}
+        .qr-code img{width:150px;height:150px;border-radius:8px;display:block}
+        .qr-code p{color:#302b63;font-weight:600;margin-top:10px;font-size:.9rem}
+        
+        .manual-install{background:rgba(255,255,255,.05);border-radius:20px;padding:25px 20px;border:1px solid rgba(255,255,255,.1);margin-bottom:30px}
+        .manual-install h3{font-size:1.5rem;color:#ffcc00;margin-bottom:20px;text-align:center}
+        .manual-install ol{padding-left:0;counter-reset:step;list-style:none}
+        .manual-install li{color:#e0e0f0;font-size:.95rem;line-height:1.6;margin-bottom:15px;padding-left:50px;position:relative;counter-increment:step}
+        .manual-install li::before{content:counter(step);position:absolute;left:0;top:-2px;width:35px;height:35px;background:linear-gradient(135deg,#ffcc00,#ff9900);color:#0f0c29;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem}
+        .manual-install .btn-container{text-align:center;margin-top:20px}
+        
+        .requirements{margin-bottom:30px;padding:25px 20px;background:rgba(255,204,0,.1);border-radius:15px}
+        .requirements h3{font-size:1.4rem;color:#ffcc00;margin-bottom:15px;text-align:center}
+        .req-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+        .req-item{background:rgba(255,255,255,.05);padding:15px;border-radius:12px;text-align:center}
+        .req-item strong{color:#ffcc00;display:block;margin-bottom:6px;font-size:.9rem}
+        .req-item span{color:#e0e0f0;font-size:.85rem}
+        
+        .download-features{margin-bottom:30px}
+        .features-title{font-size:1.5rem;color:#ffcc00;text-align:center;margin-bottom:25px}
+        .features-grid{display:grid;grid-template-columns:1fr;gap:15px}
+        .feature-item{background:rgba(255,255,255,.05);padding:20px 15px;border-radius:15px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+        .feature-item-icon{font-size:2rem;margin-bottom:10px}
+        .feature-item h4{color:#ffcc00;margin-bottom:6px;font-size:1rem}
+        .feature-item p{color:#b8b8d1;font-size:.85rem}
+        
+        .footer{background:rgba(15,12,41,.95);padding:30px 0 15px;margin-top:40px}
+        .footer-content{display:grid;grid-template-columns:1fr;gap:25px;margin-bottom:25px}
+        .footer-section h4{color:#ffcc00;font-size:1.1rem;margin-bottom:12px}
+        .footer-section p{color:#b8b8d1;line-height:1.5;font-size:.85rem}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:6px}
+        .footer-section a{color:#b8b8d1;text-decoration:none;font-size:.85rem}
+        .footer-bottom{text-align:center;padding-top:15px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8d1;font-size:.8rem}
+
+        @media (min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;position:static;width:auto;background:transparent;flex-direction:row;padding:0;gap:2rem}
+            .nav-menu li{padding:0;border-bottom:none}
+            .nav-menu a:hover{color:#ffcc00}
+            .page-title{font-size:2.5rem}
+            .page-subtitle{font-size:1.2rem;margin-bottom:50px}
+            .download-card{padding:40px 35px}
+            .platform-icon{font-size:4rem;margin-bottom:20px}
+            .download-card h2{font-size:1.8rem;margin-bottom:12px}
+            .download-card p{font-size:1rem;margin-bottom:25px}
+            .btn{padding:14px 35px;font-size:1rem}
+            .qr-code{margin-top:25px;padding:25px}
+            .qr-code img{width:180px;height:180px}
+            .manual-install{padding:40px}
+            .manual-install h3{font-size:1.8rem;margin-bottom:25px}
+            .manual-install li{font-size:1rem;margin-bottom:20px;padding-left:55px}
+            .requirements{margin-bottom:40px;padding:40px}
+            .requirements h3{font-size:1.6rem;margin-bottom:20px}
+            .req-grid{grid-template-columns:repeat(4,1fr);gap:15px}
+            .req-item{padding:18px}
+            .req-item strong{font-size:1rem}
+            .req-item span{font-size:.9rem}
+            .features-title{font-size:1.8rem;margin-bottom:35px}
+            .features-grid{grid-template-columns:repeat(2,1fr);gap:25px}
+            .feature-item{padding:25px}
+            .feature-item-icon{font-size:2.5rem;margin-bottom:12px}
+            .feature-item h4{font-size:1.1rem}
+            .feature-item p{font-size:.9rem}
+            .footer{padding:50px 0 25px;margin-top:80px}
+            .footer-content{grid-template-columns:repeat(3,1fr);gap:35px;margin-bottom:35px}
+            .footer-section h4{font-size:1.2rem;margin-bottom:15px}
+            .footer-section p{font-size:.9rem}
+            .footer-section a{font-size:.9rem}
+            .footer-bottom{padding-top:25px;font-size:.85rem}
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="../images/logo-placeholder.png" alt="DameZora" class="logo" width="35" height="35">
+                <span>DameZora</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="telechargement.html" class="active">Télécharger</a></li>
+                <li><a href="tutoriel.html">Comment jouer</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="download-page">
+        <div class="container">
+            <h1 class="page-title">Télécharge DameZora</h1>
+            <p class="page-subtitle">Disponible gratuitement via APK pour Android</p>
+            
+            <div class="download-card">
+                <div class="platform-icon">📱</div>
+                <h2>Android APK</h2>
+                <p>Télécharge l'application directement et commence à jouer immédiatement</p>
+                
+                <a href="../apk/DameZora.apk" class="btn btn-primary" download>📥 Télécharger l'APK</a>
+                
+                <div class="qr-code">
+                    <img src="../images/qr-code-placeholder.png" alt="QR Code" width="150" height="150" loading="lazy">
+                    <p>Scannez pour télécharger</p>
+                </div>
+            </div>
+            
+            <div class="requirements">
+                <h3>📋 Configuration requise</h3>
+                <div class="req-grid">
+                    <div class="req-item">
+                        <strong>Système</strong>
+                        <span>Android 5.0+</span>
+                    </div>
+                    <div class="req-item">
+                        <strong>RAM</strong>
+                        <span>2 GB min</span>
+                    </div>
+                    <div class="req-item">
+                        <strong>Espace</strong>
+                        <span>100 MB</span>
+                    </div>
+                    <div class="req-item">
+                        <strong>Internet</strong>
+                        <span>Requis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="manual-install">
+                <h3>📖 Guide d'installation</h3>
+                <ol>
+                    <li>Téléchargez le fichier APK depuis le bouton ci-dessus</li>
+                    <li>Autorisez l'installation depuis des sources inconnues dans les paramètres</li>
+                    <li>Ouvrez le fichier APK téléchargé</li>
+                    <li>Suivez les instructions à l'écran</li>
+                    <li>Lancez l'application et créez votre compte !</li>
+                </ol>
+                <div class="btn-container">
+                    <a href="../apk/DameZora.apk" class="btn btn-outline" download>📥 Télécharger</a>
+                </div>
+            </div>
+
+            <div class="download-features">
+                <h3 class="features-title">✨ Ce qui vous attend</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-item-icon">⚡</div>
+                        <h4>Installation rapide</h4>
+                        <p>Moins de 2 minutes pour jouer</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon">🔒</div>
+                        <h4>100% Sécurisé</h4>
+                        <p>APK vérifié sans virus</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon">🆓</div>
+                        <h4>Gratuit</h4>
+                        <p>Téléchargement gratuit</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon">🔄</div>
+                        <h4>Mises à jour auto</h4>
+                        <p>Toujours à jour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DameZora</h4>
+                    <p>Le jeu de dames le plus fun du moment. Rejoins des milliers de joueurs !</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="telechargement.html">Télécharger</a></li>
+                        <li><a href="tutoriel.html">Comment jouer</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                    <li><a href="mailto:equipedamezora@gmail.com">Nous contacter</a></li>
+                        <li><a href="faq.html">Centre d'aide</a></li>
+                        <!-- <li><a href="#">Conditions</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DameZora. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const t=document.getElementById('navToggle'),m=document.getElementById('navMenu');
+        t.onclick=()=>m.classList.toggle('active');
+    </script>
+</body>
+</html>
